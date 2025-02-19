@@ -1,0 +1,25 @@
+<svg
+  width="100"
+  height="100"
+  viewBox="0 0 200 200"
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="8"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <!-- Phoenix Wings -->
+  <path d="M50 150 Q75 100 100 140 Q125 100 150 150" stroke="orange"/>
+  
+  <!-- Phoenix Body -->
+  <path d="M100 140 Q95 90 100 50 Q105 90 100 140" stroke="red"/>
+  
+  <!-- Tail Feathers -->
+  <path d="M90 150 Q100 170 110 150" stroke="gold"/>
+  
+  <!-- Head & Beak -->
+  <circle cx="100" cy="50" r="8" fill="red"/>
+  <path d="M108 48 L120 45" stroke="red"/>
+</svg>
+
