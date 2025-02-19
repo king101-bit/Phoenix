@@ -11,7 +11,9 @@ const Contact = () => {
 
   const [status, setStatus] = useState("");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -38,9 +40,12 @@ const Contact = () => {
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center mt-8">
         {/* Contact Info */}
         <div className="text-center md:text-left">
-          <h2 className="font-semibold text-2xl">Let’s Find Your Dream Home Today!</h2>
+          <h2 className="font-semibold text-2xl">
+            Let’s Find Your Dream Home Today!
+          </h2>
           <p className="mt-4 text-lg text-gray-600">
-            Have questions or need assistance? Our team is ready to help. Reach out now and take the first step toward your perfect home.
+            Have questions or need assistance? Our team is ready to help. Reach
+            out now and take the first step toward your perfect home.
           </p>
         </div>
 
@@ -49,7 +54,9 @@ const Contact = () => {
           <form onSubmit={handleSubmit} className="space-y-4">
             {/* Name */}
             <div>
-              <label className="block text-sm font-medium text-gray-700">Name</label>
+              <label className="block text-sm font-medium text-gray-700">
+                Name
+              </label>
               <input
                 type="text"
                 name="name"
@@ -63,7 +70,9 @@ const Contact = () => {
 
             {/* Email */}
             <div>
-              <label className="block text-sm font-medium text-gray-700">Email</label>
+              <label className="block text-sm font-medium text-gray-700">
+                Email
+              </label>
               <input
                 type="email"
                 name="email"
@@ -77,7 +86,9 @@ const Contact = () => {
 
             {/* Message */}
             <div>
-              <label className="block text-sm font-medium text-gray-700">Message</label>
+              <label className="block text-sm font-medium text-gray-700">
+                Message
+              </label>
               <textarea
                 name="message"
                 rows={4}
@@ -90,7 +101,10 @@ const Contact = () => {
             </div>
 
             {/* Submit Button */}
-            <button type="submit" className="w-full bg-blue-600 text-white font-semibold py-2 rounded-lg hover:bg-blue-700 transition">
+            <button
+              type="submit"
+              className="w-full bg-blue-600 text-white font-semibold py-2 rounded-lg hover:bg-blue-700 transition"
+            >
               Send Message
             </button>
           </form>
