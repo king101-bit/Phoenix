@@ -15,6 +15,7 @@
     "next": "15.1.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-feather": "^2.0.10",
     "react-scroll": "^1.9.2",
     "react-typed": "^2.0.12"
   },

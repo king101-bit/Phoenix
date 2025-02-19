@@ -3,7 +3,8 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import Navbar from "./Navbar";
-
+import Image from "next/image";
+import Link from "next/link";
 const texts = [
   "Find Your Dream Home",
   "Luxury Apartments Available",
@@ -43,32 +44,36 @@ const Hero = () => {
               a click away.
             </p>
             <div className="mt-6 flex gap-4">
-              <button className="px-6 py-3 text-white bg-blue-600 rounded-lg hover:bg-blue-700 flex gap-2">
-                <span>Browse Listings</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="size-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                  />
-                </svg>
-              </button>
+              <Link href="/home">
+                <button className="px-6 py-3 text-white bg-blue-600 rounded-lg hover:bg-blue-700 flex gap-2">
+                  <span>Browse Listings</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="size-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                    />
+                  </svg>
+                </button>
+              </Link>
             </div>
           </div>
 
           {/* Right Side - SVG */}
           <div className="flex justify-center">
-            <img
+            <Image
               src="/sale.svg"
               alt="Real Estate Illustration"
               className="w-full max-w-md"
+              width={500}
+              height={500}
             />
           </div>
         </div>
