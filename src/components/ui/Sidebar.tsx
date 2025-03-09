@@ -39,8 +39,8 @@ const Sidebar = () => {
               />
             </div>
           </div>
-              </div>
-                      <h3 className="text-black font-semibold">Lot Range</h3>
+        </div>
+        <h3 className="text-black font-semibold">Lot Range</h3>
         <div className="">
           <div className="flex justify-between">
             <div>

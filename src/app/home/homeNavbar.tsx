@@ -1,5 +1,6 @@
 "use client";
 
+import { SearchFilters } from "@/components/search-filter";
 import React from "react";
 import Link from "next/link";
 
@@ -13,21 +14,18 @@ const HomeNavbar = () => {
           <Link href="/" className="hover:text-gray-400">
             Houses
           </Link>
-          <Link href="/about" className="hover:text-gray-400">
-            Townhouses
+          <Link href="/" className="hover:text-gray-400">
+            Townhomes
           </Link>
-          <Link href="/about" className="hover:text-gray-400">
+          <Link href="/" className="hover:text-gray-400">
             Apartments
           </Link>
-          <Link href="/about" className="hover:text-gray-400">
+          <Link href="/" className="hover:text-gray-400">
             Land
           </Link>
         </div>
 
-        {/* Center Name */}
-        <Link href="/" className="text-lg font-bold ml-4">
-          Phoenix
-        </Link>
+        <SearchFilters />
 
         {/* Right Items */}
         <div className="flex items-center gap-4">
@@ -39,7 +37,7 @@ const HomeNavbar = () => {
           </Link>
           <Link
             href="/login"
-            className="px-4 py-1.5 text-black bg-white border border-blue-600 rounded-lg"
+            className="px-4 py-1.5 text-black bg-white border border-blue-600 rounded-lg hover:bg-blue-600 hover:text-white"
           >
             Login
           </Link>
