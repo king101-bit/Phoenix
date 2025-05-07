@@ -1,83 +1,84 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { Search } from "lucide-react";
 import Navbar from "./Navbar";
-import Image from "next/image";
-import Link from "next/link";
-const texts = [
-  "Find Your Dream Home",
-  "Luxury Apartments Available",
-  "Start Your Journey Today",
-];
+import { Button } from "./button";
+import {
+  Select,
+  SelectItem,
+  SelectContent,
+  SelectTrigger,
+  SelectValue,
+} from "./select";
+import { Input } from "./input";
 
 const Hero = () => {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % texts.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <>
-      <Navbar />
-      <section className="bg-gradient-to-r from-blue-100 to-blue-200 py-16 h-screen flex items-center justify-center px-6">
-        <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          {/* Left Side - Text Content */}
-          <div>
-            <h1 className="text-5xl font-bold text-gray-900 sm:text-6xl">
-              <motion.span
-                key={texts[index]}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.5 }}
-              >
-                {texts[index]}
-              </motion.span>
-            </h1>
-            <p className="mt-4 text-lg text-gray-600">
-              Discover the best properties with ease. Your perfect home is just
-              a click away.
-            </p>
-            <div className="mt-6 flex gap-4">
-              <Link href="/home">
-                <button className="px-6 py-3 text-white bg-blue-600 rounded-lg hover:bg-blue-700 flex gap-2">
-                  <span>Browse Listings</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="size-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+      <main className="flex-1">
+        <section className="relative py-20 md:py-28">
+          <div className="absolute inset-0 z-[-1] bg-gradient-to-b from-muted/50 to-muted"></div>
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center text-center space-y-4">
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
+                Find Your Dream Home Today
+              </h1>
+              <p className="max-w-[700px] text-muted-foreground md:text-xl">
+                Discover thousands of properties for sale and rent across the
+                country.
+              </p>
+
+              {/* Search Bar */}
+              <div className="w-full max-w-3xl mt-8 p-4 bg-background rounded-lg shadow-lg">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium">Location</label>
+                    <Input
+                      type="text"
+                      placeholder="City, neighborhood, or ZIP"
                     />
-                  </svg>
-                </button>
-              </Link>
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium">Price Range</label>
+                    <Select>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Any price" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="100k">Under $100k</SelectItem>
+                        <SelectItem value="200k">$100k - $200k</SelectItem>
+                        <SelectItem value="300k">$200k - $300k</SelectItem>
+                        <SelectItem value="400k">$300k - $400k</SelectItem>
+                        <SelectItem value="500k">$400k - $500k</SelectItem>
+                        <SelectItem value="1m">$500k - $1M</SelectItem>
+                        <SelectItem value="any">$1M+</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium">Property Type</label>
+                    <Select>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Any type" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="house">House</SelectItem>
+                        <SelectItem value="apartment">Apartment</SelectItem>
+                        <SelectItem value="condo">Condo</SelectItem>
+                        <SelectItem value="townhouse">Townhouse</SelectItem>
+                        <SelectItem value="land">Land</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+                <Button className="w-full mt-4">
+                  <Search className="mr-2 h-4 w-4" /> Search Properties
+                </Button>
+              </div>
             </div>
           </div>
-
-          {/* Right Side - SVG */}
-          <div className="flex justify-center">
-            <Image
-              src="/sale.svg"
-              alt="Real Estate Illustration"
-              className="w-full max-w-md"
-              width={500}
-              height={500}
-            />
-          </div>
-        </div>
-      </section>
+        </section>
+      </main>
     </>
   );
 };

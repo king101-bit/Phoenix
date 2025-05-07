@@ -1,17 +1,17 @@
 import Hero from "@/components/ui/Hero";
-import About from "@/components/ui/About";
-import Contact from "@/components/ui/Contact";
 import Properties from "@/components/ui/Properties";
 import Choose from "@/components/ui/Choose";
+import Footer from "@/components/ui/Footer";
 
 export default function Home() {
   return (
     <>
-      <Hero />
-      <About />
-      <Choose />
-      <Properties />
-      <Contact />
+      <div className="flex flex-col min-h-screen">
+        <Hero />
+        <Properties />
+        <Choose />
+        <Footer />
+      </div>
     </>
   );
 }
