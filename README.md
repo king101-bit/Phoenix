@@ -2,6 +2,8 @@
 
 Welcome to **Phoenix Real Estate**, a modern real estate platform built with **Next.js**, **Tailwind CSS**, and **Supabase**. This site allows users to browse, list, and manage real estate properties efficiently, with real-time features powered by Supabase.
 
+![Phoenix](https://github.com/king101-bit/Phoenix/blob/main/Phoenix.png)
+
 ---
 
 ## 🚀 Features
