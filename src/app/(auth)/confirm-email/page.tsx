@@ -1,8 +1,8 @@
 "use client"
-import useAuthRedirect from "@/hook/useAuthRedirect"
+// import useAuthRedirect from "@/hook/useAuthRedirect"
 
 const ConfirmEmailPage = () => {
-  useAuthRedirect()
+  // useAuthRedirect()
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-gray-50 p-4">

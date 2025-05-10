@@ -19,7 +19,6 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
-import Footer from "@/components/ui/Footer";
 
 const Home = () => {
   return (

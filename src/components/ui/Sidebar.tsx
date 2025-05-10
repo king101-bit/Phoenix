@@ -62,7 +62,7 @@ const Sidebar = () => {
                   {["House", "Apartment", "Condo", "Townhouse", "Land"].map(
                     (type) => (
                       <div key={type} className="flex items-center space-x-2">
-                        <Checkbox id={`type-${type.toLowerCase()}`} />
+                        <Checkbox label={`type-${type.toLowerCase()}`} />
                         <label
                           htmlFor={`type-${type.toLowerCase()}`}
                           className="text-sm"
@@ -133,7 +133,7 @@ const Sidebar = () => {
                   ].map((feature) => (
                     <div key={feature} className="flex items-center space-x-2">
                       <Checkbox
-                        id={`feature-${feature.toLowerCase().replace(/\s+/g, "-")}`}
+                        label={`feature-${feature.toLowerCase().replace(/\s+/g, "-")}`}
                       />
                       <label
                         htmlFor={`feature-${feature.toLowerCase().replace(/\s+/g, "-")}`}

@@ -1,7 +1,6 @@
 "use client";
 
 import { Search } from "lucide-react";
-import Navbar from "./Navbar";
 import { Button } from "./button";
 import {
   Select,
