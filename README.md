@@ -1,44 +1,120 @@
-<<<<<<< HEAD
-
 # Phoenix
 
-# A basic Real estate site
+Welcome to **Phoenix Real Estate**, a modern real estate platform built with **Next.js**, **Tailwind CSS**, and **Supabase**. This site allows users to browse, list, and manage real estate properties efficiently, with real-time features powered by Supabase.
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+---
 
-## Getting Started
+## 🚀 Features
 
-First, run the development server:
+- **Responsive Design**: Optimized for mobile, tablet, and desktop.
+- **Property Listings**: Browse, search, and filter properties by price, location, etc.
+- **User Authentication**: Secure sign up, login, and profile management via Supabase.
+- **Real-time Updates**: Live syncing of property data and user interactions.
+- **Admin Panel**: Role-based access to manage listings.
+- **Dark Mode**: Toggle between light and dark themes.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js** – React framework for SSR and SSG.
+- **Tailwind CSS** – Utility-first CSS framework.
+- **Supabase** – Backend for authentication and database (PostgreSQL).
+- **PostgreSQL** – Powerful, open-source relational database.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🧰 Installation
 
-To learn more about Next.js, take a look at the following resources:
+### Prerequisites
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Node.js (v14 or later)
+- `pnpm` installed globally (`npm install -g pnpm`)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Setup Steps
 
-## Deploy on Vercel
+1. **Clone the repository**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   git clone https://github.com/king101-bit/Phoenix
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. **Navigate into the project**
 
-> > > > > > > fee7487 (Initial commit)
+    ```bash
+    cd Phoenix
+
+3. **Install dependencies**
+   bash
+
+       pnpm install 
+
+4. **Configure environment variables**
+- Create a .env.local file in the root directory and add your Supabase credentials:
+   bash
+
+      NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
+      NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
+  
+- You can get these keys from your Supabase project dashboard.
+  
+5. **Run the development server**
+       bash
+
+       pnpm run dev
+
+   
+## 🧭 Feature Walkthrough
+### 🏘️ Property Listings
+
+Users can browse through property listings, each with information like price, location, image, and description.
+### 🔐 User Authentication
+
+Phoenix uses Supabase for secure login, registration, and session handling.
+### 🛠️ Admin Panel
+
+Admins have exclusive access to add, update, and delete listings.
+### 🔄 Real-time Data
+
+Supabase subscriptions provide real-time updates to the listings.
+### 🌙 Dark Mode
+
+Users can toggle light/dark mode from the interface.
+### 🚀 Deployment
+
+Phoenix can be deployed on platforms like Vercel or Netlify.
+Deploy on Vercel
+Go to Vercel and sign in with your GitHub account.
+Click Import Project and select the Phoenix repository.
+Add the following environment variables in your project settings:
+
+   bash
+   
+        NEXT_PUBLIC_SUPABASE_URL
+
+        NEXT_PUBLIC_SUPABASE_ANON_KEY
+
+Click Deploy and wait for the build to finish.
+
+🤝 Contributing
+
+We welcome contributions!
+
+Fork this repository.
+
+**Create a new branch:**
+    bash
+        
+        git checkout -b feature-name
+
+**Make your changes and commit them:**
+bash
+    
+    git commit -am 'Add feature'
+
+**Push to your branch:**
+bash
+
+    git push origin feature-name
+
+    Open a pull request and describe your changes.
+
