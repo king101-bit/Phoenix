@@ -1,4 +1,4 @@
-export const properties = [
+const properties = [
   {
     id: 1,
     title: "Beach House",
@@ -8,6 +8,7 @@ export const properties = [
     price: "$2,500,000",
     img: "/beach-house.jpg",
     location: "Los Angeles, CA",
+    createdAt: "2024-12-01T11:00:00Z"
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ export const properties = [
     price: "$1,200,000",
     img: "/beach-house.jpg",
     location: "New York, NY",
+    createdAt: "2024-11-01T12:45:00Z"
   },
   {
     id: 3,
@@ -28,15 +30,30 @@ export const properties = [
     price: "$3,800,000",
     img: "/beach-house.jpg",
     location: "Miami, FL",
+    createdAt: "2024-10-01T13:25:00Z"
   },
   {
     id: 4,
     title: "Mountain Cabin",
-    bathrooms: "3",
-    bedrooms: "4",
+    bathrooms: "4",
+    bedrooms: "5",
     sqft: "3,000",
-    price: "$3,800,000",
-    img: "/beach-house.jpg",
+    price: "$4,800,000",
+    img: "/beach-house-2.jpg",
     location: "Miami, FL",
+    createdAt: "2024-13-01T14:30:00Z"
+  },
+  {
+    id: 5,
+    title: "Hotel Room",
+    bathrooms: "1",
+    bedrooms: "1",
+    sqft: "500",
+    price: "$500,000",
+    img: "/beach-house-3.jpg",
+    location: "Ontario, Canada",
+    createdAt: "2024-14-01T15:10:00Z"
   },
 ];
+
+export default properties;

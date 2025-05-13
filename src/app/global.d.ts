@@ -5,6 +5,10 @@ interface Property {
   bedrooms: string;
   sqft: string;
   price: string;
-  images: string;
+  img: string;
   location: string;
+}
+
+interface PropertyCardProps {
+  properties: Property[];
 }

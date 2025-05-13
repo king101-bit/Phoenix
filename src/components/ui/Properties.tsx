@@ -3,8 +3,10 @@
 import Link from "next/link";
 import PropertyCard from "./PropertyCard";
 import { Button } from "./button";
+import properties from "@/data/properties";
 
 export default function Properties() {
+  const limitedProperties = properties.slice(0, 4);
   return (
     <>
       <section className="py-12 md:py-16 bg-background" id="properties">
@@ -18,7 +20,7 @@ export default function Properties() {
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-            <PropertyCard />
+            <PropertyCard properties={limitedProperties} />
           </div>
 
           <div className="flex justify-center mt-8">

@@ -1,4 +1,4 @@
-import { properties } from "@/data/properties";
+import  properties from "@/data/properties";
 import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
@@ -12,7 +12,37 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Metadata } from "next";
+
+export async function generateMetadata(
+  { params }: { params: { id: string } }
+): Promise<Metadata> {
+  const property = properties.find((p) => p.id === parseInt(params.id));
+
+  if (!property) {
+    return {
+      title: "Property Not Found",
+      description: "The property you're looking for does not exist.",
+    };
+  }
+
+  return {
+    title: `${property.title} | Phoenix`,
+    description: `Explore details about ${property.title} located in ${property.location}.`,
+    openGraph: {
+      title: `${property.title} | Luna Properties`,
+      description: `Explore this listing in ${property.location}. Price: ${property.price}`,
+      images: [
+        {
+          url: property.img,
+          width: 1200,
+          height: 630,
+          alt: `${property.title}`,
+        },
+      ],
+    },
+  };
+}
 
 export async function generateStaticParams() {
   return properties.map((property) => ({
@@ -29,6 +59,7 @@ export default async function PropertyDetailPage(props: {
   if (!property) {
     return (
       <div className="h-screen text-center mt-10">
+        <Image src="/town.png" width={300} height={300} className="h-auto w-auto justify-center items-center" alt="error text" />
         <h2>Property Not Found</h2>
       </div>
     );
@@ -40,6 +71,16 @@ export default async function PropertyDetailPage(props: {
         <div className="container px-4 md:px-6 py-8">
           <Carousel className="relative aspect-[16/9] md:aspect-[21/9] w-full rounded-lg overflow-hidden">
             <CarouselContent>
+              <CarouselItem>
+                <Image
+                  src={property.img}
+                  alt={`${property.title}`}
+                  width={1200}
+                  height={600}
+                  className="w-full h-full object-cover"
+                  priority
+                />
+              </CarouselItem>
               <CarouselItem>
                 <Image
                   src={property.img}
