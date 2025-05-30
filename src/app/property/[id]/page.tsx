@@ -1,27 +1,31 @@
-import  properties from "@/data/properties";
-import Image from "next/image";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Button } from "@/components/ui/button";
-import { Bath, Bed, Heart, MapPin, Share2, Square } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import properties from '@/data/properties';
+import Image from 'next/image';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Button } from '@/components/ui/button';
+import { Bath, Bed, Heart, MapPin, Share2, Square } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel";
-import { Metadata } from "next";
+} from '@/components/ui/carousel';
+import { Metadata } from 'next';
 
-export async function generateMetadata(
-  { params }: { params: { id: string } }
-): Promise<Metadata> {
-  const property = properties.find((p) => p.id === parseInt(params.id));
+// Updated type definition for Next.js 15+
+type Props = {
+  params: Promise<{ id: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { id } = await params; // Await the params
+  const property = properties.find((p) => p.id === parseInt(id));
 
   if (!property) {
     return {
-      title: "Property Not Found",
+      title: 'Property Not Found',
       description: "The property you're looking for does not exist.",
     };
   }
@@ -50,16 +54,20 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function PropertyDetailPage(props: {
-  params: Promise<{ id: string }>;
-}) {
-  const { id } = await props.params;
+export default async function PropertyDetailPage({ params }: Props) {
+  const { id } = await params; // Await the params
   const property = properties.find((p) => p.id === parseInt(id));
 
   if (!property) {
     return (
       <div className="h-screen text-center mt-10">
-        <Image src="/town.png" width={300} height={300} className="h-auto w-auto justify-center items-center" alt="error text" />
+        <Image
+          src="/town.png"
+          width={300}
+          height={300}
+          className="h-auto w-auto justify-center items-center"
+          alt="error text"
+        />
         <h2>Property Not Found</h2>
       </div>
     );
@@ -69,7 +77,7 @@ export default async function PropertyDetailPage(props: {
     <div className="flex-1">
       <section className="relative bg-muted p-8">
         <div className="container px-4 md:px-6 py-8">
-          <Carousel className="relative aspect-[16/9] md:aspect-[21/9] w-full rounded-lg overflow-hidden">
+          <Carousel className="relative aspect-16/9 md:aspect-[21/9] w-full rounded-lg overflow-hidden">
             <CarouselContent>
               <CarouselItem>
                 <Image

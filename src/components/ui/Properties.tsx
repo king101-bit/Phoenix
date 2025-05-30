@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import PropertyCard from "./PropertyCard";
-import { Button } from "./button";
-import properties from "@/data/properties";
+import Link from 'next/link';
+import PropertyCard from './PropertyCard';
+import { Button } from './button';
+import properties from '@/data/properties';
 
 export default function Properties() {
   const limitedProperties = properties.slice(0, 4);

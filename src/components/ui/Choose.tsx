@@ -1,4 +1,4 @@
-import { Award, Shield, Star } from "lucide-react";
+import { Award, Shield, Star } from 'lucide-react';
 
 const Choose = () => {
   return (

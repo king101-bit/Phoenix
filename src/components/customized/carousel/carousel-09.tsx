@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import * as React from "react";
+import * as React from 'react';
 
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from '@/components/ui/card';
 import {
   Carousel,
   CarouselContent,
@@ -10,8 +10,8 @@ import {
   CarouselNext,
   CarouselPrevious,
   type CarouselApi,
-} from "@/components/ui/carousel";
-import { cn } from "@/lib/utils";
+} from '@/components/ui/carousel';
+import { cn } from '@/lib/utils';
 
 export default function CarouselWithThumbs() {
   const [api, setApi] = React.useState<CarouselApi>();
@@ -26,7 +26,7 @@ export default function CarouselWithThumbs() {
     setCount(api.scrollSnapList().length);
     setCurrent(api.selectedScrollSnap() + 1);
 
-    api.on("select", () => {
+    api.on('select', () => {
       setCurrent(api.selectedScrollSnap() + 1);
     });
   }, [api]);
@@ -60,8 +60,8 @@ export default function CarouselWithThumbs() {
             <CarouselItem
               key={index}
               className={cn(
-                "basis-1/5 cursor-pointer",
-                current === index + 1 ? "opacity-100" : "opacity-50"
+                'basis-1/5 cursor-pointer',
+                current === index + 1 ? 'opacity-100' : 'opacity-50'
               )}
               onClick={() => handleThumbClick(index)}
             >

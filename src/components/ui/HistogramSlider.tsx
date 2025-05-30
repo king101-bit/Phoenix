@@ -1,5 +1,5 @@
-"use client";
-import { useState } from "react";
+'use client';
+import { useState } from 'react';
 
 const histogramData = [
   1, 3, 6, 10, 15, 22, 30, 45, 50, 55, 60, 62, 58, 52, 45, 35, 25, 15, 8, 4, 2,
@@ -48,7 +48,7 @@ const HistogramSlider = () => {
           <div
             key={index}
             className={`w-3 h-${Math.max(2, value / 3)} transition-all rounded ${
-              index >= min && index <= max ? "bg-black" : "bg-gray-300"
+              index >= min && index <= max ? 'bg-black' : 'bg-gray-300'
             }`}
           ></div>
         ))}

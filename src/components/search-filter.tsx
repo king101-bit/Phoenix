@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { Search } from "lucide-react";
-import { Input } from "@/components/ui/input";
+import { Search } from 'lucide-react';
+import { Input } from '@/components/ui/input';
 
 export function SearchFilters() {
   return (

@@ -1,16 +1,16 @@
-"use client"; // ✅ Add this if you're in the app directory
+'use client'; // ✅ Add this if you're in the app directory
 
-import React from "react";
-import Image from "next/image";
-import { motion } from "framer-motion"; // ✅ Ensure it's a named import
+import React from 'react';
+import Image from 'next/image';
+import { motion } from 'framer-motion'; // ✅ Ensure it's a named import
 
 const About = () => {
   return (
     <>
-      {" "}
+      {' '}
       <section
         id="about"
-        className="bg-gradient-to-r from-white to-gray-50 flex flex-col items-center justify-center"
+        className="bg-linear-to-r from-white to-gray-50 flex flex-col items-center justify-center"
       >
         {/* ✅ Fade-in Animation for Heading */}
         <motion.h1

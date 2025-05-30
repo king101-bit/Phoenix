@@ -1,15 +1,15 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { ChevronDown, ChevronUp, Filter } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import { Slider } from "@/components/ui/slider";
-import Checkbox from "@/components/ui/Checkbox";
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { ChevronDown, ChevronUp, Filter } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+import { Slider } from '@/components/ui/slider';
+import { Checkbox } from '@/components/ui/checkbox';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
+} from '@/components/ui/accordion';
 
 const Sidebar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -35,10 +35,10 @@ const Sidebar = () => {
           <AccordionTrigger>Property Type</AccordionTrigger>
           <AccordionContent>
             <div className="space-y-2">
-              {["House", "Apartment", "Condo", "Townhouse", "Land"].map(
+              {['House', 'Apartment', 'Condo', 'Townhouse', 'Land'].map(
                 (type) => (
                   <div key={type} className="flex items-center space-x-2">
-                    <Checkbox label=""/>
+                    <Checkbox id="" />
                     <label
                       htmlFor={`type-${type.toLowerCase()}`}
                       className="text-sm"
@@ -56,7 +56,7 @@ const Sidebar = () => {
           <AccordionTrigger>Bedrooms</AccordionTrigger>
           <AccordionContent>
             <div className="flex flex-wrap gap-2">
-              {["Any", "1+", "2+", "3+", "4+", "5+"].map((bed) => (
+              {['Any', '1+', '2+', '3+', '4+', '5+'].map((bed) => (
                 <Button
                   key={bed}
                   variant="outline"
@@ -74,7 +74,7 @@ const Sidebar = () => {
           <AccordionTrigger>Bathrooms</AccordionTrigger>
           <AccordionContent>
             <div className="flex flex-wrap gap-2">
-              {["Any", "1+", "2+", "3+", "4+"].map((bath) => (
+              {['Any', '1+', '2+', '3+', '4+'].map((bath) => (
                 <Button
                   key={bath}
                   variant="outline"
@@ -100,19 +100,17 @@ const Sidebar = () => {
           <AccordionContent>
             <div className="space-y-2">
               {[
-                "Pool",
-                "Garage",
-                "Air Conditioning",
-                "Fireplace",
-                "Garden",
-                "Balcony",
+                'Pool',
+                'Garage',
+                'Air Conditioning',
+                'Fireplace',
+                'Garden',
+                'Balcony',
               ].map((feature) => (
                 <div key={feature} className="flex items-center space-x-2">
-                  <Checkbox
-                    label=""
-                  />
+                  <Checkbox id="" />
                   <label
-                    htmlFor={`feature-${feature.toLowerCase().replace(/\s+/g, "-")}`}
+                    htmlFor={`feature-${feature.toLowerCase().replace(/\s+/g, '-')}`}
                     className="text-sm"
                   >
                     {feature}

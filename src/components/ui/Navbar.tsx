@@ -1,31 +1,31 @@
-import { Home, Search } from "lucide-react";
-import React from "react";
-import { Button } from "./button";
-import Link from "next/link";
+import { Home, Search } from 'lucide-react';
+import React from 'react';
+import { Button } from './button';
+import Link from 'next/link';
 
 const Navbar = () => {
   const navLinks = [
     {
-      href: "/buy",
-      label: "Buy",
-      key: "buy",
+      href: '/buy',
+      label: 'Buy',
+      key: 'buy',
     },
     {
-      href: "/sell",
-      label: "Sell",
-      key: "sell",
+      href: '/sell',
+      label: 'Sell',
+      key: 'sell',
     },
     {
-      href: "/rent",
-      label: "Rent",
-      key: "rent",
+      href: '/rent',
+      label: 'Rent',
+      key: 'rent',
     },
   ];
 
   return (
     <>
-      {" "}
-      <header className="px-16 sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      {' '}
+      <header className="px-16 sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <Home className="h-6 w-6" />
@@ -57,7 +57,7 @@ const Navbar = () => {
             </Button>
           </div>
         </div>
-      </header>{" "}
+      </header>{' '}
     </>
   );
 };

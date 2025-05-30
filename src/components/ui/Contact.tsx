@@ -1,18 +1,18 @@
-"use client";
-import { useState } from "react";
-import React from "react";
+'use client';
+import { useState } from 'react';
+import React from 'react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
+    name: '',
+    email: '',
+    message: '',
   });
 
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState('');
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -20,17 +20,17 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
+    const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
     });
 
     if (response.ok) {
-      setStatus("Message sent successfully!");
-      setFormData({ name: "", email: "", message: "" });
+      setStatus('Message sent successfully!');
+      setFormData({ name: '', email: '', message: '' });
     } else {
-      setStatus("Something went wrong. Try again.");
+      setStatus('Something went wrong. Try again.');
     }
   };
 
@@ -64,7 +64,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-2 border rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                   placeholder="John Doe"
                 />
               </div>
@@ -80,7 +80,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-2 border rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                   placeholder="johndoe@example.com"
                 />
               </div>
@@ -96,7 +96,7 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-2 border rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                   placeholder="Type your message..."
                 ></textarea>
               </div>

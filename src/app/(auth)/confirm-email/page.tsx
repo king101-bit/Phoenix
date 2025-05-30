@@ -1,4 +1,4 @@
-"use client"
+'use client';
 // import useAuthRedirect from "@/hook/useAuthRedirect"
 
 const ConfirmEmailPage = () => {
@@ -35,7 +35,7 @@ const ConfirmEmailPage = () => {
         </p>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ConfirmEmailPage
+export default ConfirmEmailPage;
