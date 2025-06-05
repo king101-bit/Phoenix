@@ -1,15 +1,15 @@
 'use client';
 
 import { Search } from 'lucide-react';
-import { Button } from './button';
+import { Button } from './ui/button';
 import {
   Select,
   SelectItem,
   SelectContent,
   SelectTrigger,
   SelectValue,
-} from './select';
-import { Input } from './input';
+} from './ui/select';
+import { Input } from './ui/input';
 import Navbar from './Navbar';
 
 const Hero = () => {

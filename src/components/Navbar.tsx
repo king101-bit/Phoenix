@@ -1,9 +1,14 @@
+'use client';
 import { Home, Search } from 'lucide-react';
 import React from 'react';
-import { Button } from './button';
+import { Button } from './ui/button';
 import Link from 'next/link';
+import useUserStore from '@/stores/UserStore';
+import UserGreetText from './ui/UserText';
 
 const Navbar = () => {
+  const user = useUserStore((state) => state.user);
+
   const navLinks = [
     {
       href: '/buy',
@@ -30,6 +35,7 @@ const Navbar = () => {
           <div className="flex items-center gap-2">
             <Home className="h-6 w-6" />
             <span className="text-xl font-bold">Phoenix</span>
+            <UserGreetText user={user} />
           </div>
           <nav className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
@@ -43,18 +49,27 @@ const Navbar = () => {
             ))}
           </nav>
           <div className="flex items-center gap-4">
-            <Link href="/login">
-              <Button variant="ghost" size="sm">
-                Login
-              </Button>
-            </Link>
-            <Link href="/signup">
-              <Button size="sm">Sign Up</Button>
-            </Link>
-            <Button variant="outline" size="icon" className="md:hidden">
-              <Search className="h-4 w-4" />
-              <span className="sr-only">Search</span>
-            </Button>
+            {user ? (
+              // User is logged in - show greeting and sign out
+              <div className="flex items-center gap-4">
+                <UserGreetText user={user} className="text-sm font-medium" />
+                <Button variant="ghost" size="sm">
+                  Sign Out
+                </Button>
+              </div>
+            ) : (
+              // User is NOT logged in - show login/signup buttons
+              <>
+                <Link href="/login">
+                  <Button variant="ghost" size="sm">
+                    Login
+                  </Button>
+                </Link>
+                <Link href="/signup">
+                  <Button size="sm">Sign Up</Button>
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </header>{' '}

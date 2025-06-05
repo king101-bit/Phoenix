@@ -5,7 +5,7 @@ interface Property {
   bedrooms: string;
   sqft: string;
   price: string;
-  img: string;
+  img: string[];
   location: string;
 }
 

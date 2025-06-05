@@ -1,7 +1,7 @@
 import { Home } from 'lucide-react';
 import Link from 'next/link';
-import { Input } from './input';
-import { Button } from './button';
+import { Input } from './ui/input';
+import { Button } from './ui/button';
 
 export default function Footer() {
   return (

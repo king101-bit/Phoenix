@@ -5,7 +5,7 @@ import DropdownQuery from '@/components/ui/DropdownQuery';
 import PropertyCard from '@/components/ui/PropertyCard';
 import { redirect, useSearchParams } from 'next/navigation';
 import properties from '@/data/properties';
-import Navbar from '@/components/ui/Navbar';
+import Navbar from '@/components/Navbar';
 
 export default function ListingsPage() {
   const searchParams = useSearchParams();

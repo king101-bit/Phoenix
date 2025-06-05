@@ -19,7 +19,7 @@ export default function PropertyCard({ properties }: PropertyCardProps) {
           <Card className="hover:shadow-lg transition-shadow mb-4">
             <div className="relative w-full h-48 sm:h-60">
               <Image
-                src={property.img}
+                src={property.img[0]}
                 alt={property.title}
                 fill
                 className="object-cover rounded-t-lg"
